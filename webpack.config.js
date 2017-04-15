@@ -1,33 +1,74 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
 
-module.exports = {
-	context: __dirname + "/src",
-	devtool: debug ? "inline-sourcemap" : null,
-	entry: "./js/client.js",
-	module: {
-		loaders: [
-			{
-				test: /\.js?$/,
-				exclude: /(node_modules | bower_components)/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['react', 'es2015', 'stage-0'],
-					plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
-				}
-			}
-		]
-	},
-	output: {
-		path: __dirname + "/src/",
-		filename: "client.min.js"
-	},
-	plugins: debug ? [] : [
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),
-	],
-	devServer: {
-      historyApiFallback: true
+process.noDeprecation = true;
+
+const debug = process.env.NODE_ENV !== "production";
+const webpack = require('webpack');
+const path = require('path');
+
+//Plugins
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+//Html plugin config
+const htmlPluginConfig = {
+  template: './index.html',
+  filename: 'index.html',
+  inject: 'body'
+};
+
+
+const productionPlugins = [
+  new ExtractTextPlugin('assets/css/style.min.css'),
+  new HtmlWebpackPlugin(htmlPluginConfig),
+  new webpack.optimize.UglifyJsPlugin({mangle: false})
+];
+
+const devPlugins = [
+  new ExtractTextPlugin('assets/css/style.min.css'),
+  new HtmlWebpackPlugin(htmlPluginConfig),
+  new webpack.optimize.UglifyJsPlugin({mangle: false})
+];
+
+const config = {
+  context: path.resolve(__dirname, "src"),
+  devtool: debug ? "inline-sourcemap" : null,
+  entry: "./App.js",
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /(node_modules | bower_components)/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.scss?/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                minimize: true
+              }
+            },
+            {
+              loader: "sass-loader"
+            }
+          ],
+        })
+      },
+
+    ]
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.min.js"
+  },
+  plugins: debug ? devPlugins : productionPlugins,
+  devServer: {
+    historyApiFallback: true
   }
 };
+
+module.exports = config;

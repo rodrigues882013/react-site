@@ -1,10 +1,13 @@
 import React from "react";
 
+import "./Layout.scss";
+
+
 //Internal components
-import Header from "../header/header.component";
-import Footer from "../footer/footer.component";
-import Content from "../content/content.component";
-import Navbar from "../navbar/navbar.component";
+import Header from "../Header";
+import Footer from "../Footer";
+import Content from "../Content";
+import Navbar from "../Navbar";
 
 export default class Layout extends React.Component {
   constructor(){
@@ -24,6 +27,6 @@ export default class Layout extends React.Component {
 	      <Content />
 	      <Footer />
 	    </div>
-	  )
+	  );
   }
 }

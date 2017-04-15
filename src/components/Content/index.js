@@ -1,5 +1,8 @@
 import React from "react";
 
+import "./Content.scss";
+
+
 export default class Content extends React.Component {
   constructor(){
     super();
@@ -14,6 +17,6 @@ export default class Content extends React.Component {
          </div>
        </div>
      </div>
-		)
+		);
 	}
 }
