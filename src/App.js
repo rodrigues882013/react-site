@@ -15,6 +15,6 @@ ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={Layout} />
-	  </div>
-	</Router>,
-app);
+    </div>
+  </Router>,
+  app);
