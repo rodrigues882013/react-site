@@ -16,14 +16,8 @@ const htmlPluginConfig = {
   inject: 'body'
 };
 
-
-const productionPlugins = [
-  new ExtractTextPlugin('assets/css/style.min.css'),
-  new HtmlWebpackPlugin(htmlPluginConfig),
-  new webpack.optimize.UglifyJsPlugin({mangle: false})
-];
-
-const devPlugins = [
+//Plugins in use to production
+const plugins = [
   new ExtractTextPlugin('assets/css/style.min.css'),
   new HtmlWebpackPlugin(htmlPluginConfig),
   new webpack.optimize.UglifyJsPlugin({mangle: false})
@@ -55,9 +49,9 @@ const config = {
             {
               loader: "sass-loader"
             }
-          ],
+          ]
         })
-      },
+      }
 
     ]
   },
@@ -65,7 +59,7 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.min.js"
   },
-  plugins: debug ? devPlugins : productionPlugins,
+  plugins: plugins,
   devServer: {
     historyApiFallback: true
   }
