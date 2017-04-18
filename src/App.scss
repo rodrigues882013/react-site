@@ -1,8 +1,61 @@
+$white: #fff;
+$black: #000000;
+
+$tablets: 600px;
+$desktop: 768px;
+
+//Body variables
+$body_bg:  $white;
+$body_font_size: 14px;
+$body_font_color: #333;
+$body_line_height: 1.42857143;
+$body_font_family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
+  font-family: $body_font_family;
+  font-size: $body_font_size;
+  line-height: $body_line_height;
+  color: $body_font_color;
+  background-color: $body_bg;
+  margin: 0;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: $tablets) {
+  /* For tablets: */
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+}
+@media only screen and (min-width: $desktop) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
 }

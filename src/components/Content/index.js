@@ -11,9 +11,9 @@ export default class Content extends React.Component {
 
   render(){
     return (
-     <div>
-       {this.props.content}
-     </div>
+      <div className="col-12 col-m-12">
+        {this.props.content}
+      </div>
 		);
 	}
 }

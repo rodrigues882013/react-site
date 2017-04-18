@@ -15,14 +15,6 @@ export default class Layout extends React.Component {
     super();
   }
 
-  componentWillMount(){
-    console.log("Montando")
-  }
-
-  componentDidMount(){
-    console.log("Montado")
-  }
-
 
 
   render(){
@@ -31,7 +23,9 @@ export default class Layout extends React.Component {
         <Navbar />
         <Header />
         <Banner url={this.props.url}/>
-	      <Content content={this.props.content}/>
+        <div className="row">
+          <Content content={this.props.content}/>
+        </div>
 	      <Footer />
 	    </div>
 	  );

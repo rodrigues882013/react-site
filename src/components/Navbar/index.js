@@ -13,17 +13,12 @@ export default class Navbar extends React.Component {
 
 	render(){
 		return (
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><Link to="">Home</Link></li>
-              <li><Link to="about">About</Link></li>
-            </ul>
-          </div>
+      <nav className="navbar">
+        <div id="navbar" className="collapse navbar-collapse">
+          <ul className="nav navbar-nav">
+            <li className="active"><Link to="">Home</Link></li>
+            <li><Link to="about">About</Link></li>
+          </ul>
         </div>
       </nav>
 		)
