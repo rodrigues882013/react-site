@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "../Navbar";
+
 
 import "./Header.scss";
 
@@ -11,10 +13,9 @@ export default class Header extends React.Component {
 
   render(){
     return (
-      <div>
-      <header> {this.props.title} </header>
-      </div>
-
+      <header>
+        <Navbar />
+      </header>
 	  );
   }
 }

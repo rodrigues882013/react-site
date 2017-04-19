@@ -1,6 +1,6 @@
 @import './../../App.scss';
 
-$navbar_bg: rgba(0, 0, 0, 0.85);
+$navbar_bg: #333;
 
 .navbar{
   background-color: $navbar_bg;
@@ -9,7 +9,6 @@ $navbar_bg: rgba(0, 0, 0, 0.85);
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
 }
 
 ul.nav.navbar-nav li{
@@ -25,4 +24,13 @@ ul li a{
 
 ul li a:hover, a:visited{
   color: $white;
+}
+
+.btnOpen{
+  font-size: 30px;
+  cursor:pointer
+}
+
+@media screen and (max-height: 450px) {
+  font-size: 60px;
 }

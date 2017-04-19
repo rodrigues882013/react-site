@@ -7,8 +7,9 @@ import "./Layout.scss";
 import Header from "../Header";
 import Footer from "../Footer";
 import Content from "../Content";
-import Navbar from "../Navbar";
 import Banner from "../Banner";
+import Sidebar from "../Sidebar";
+
 
 export default class Layout extends React.Component {
   constructor(){
@@ -20,12 +21,9 @@ export default class Layout extends React.Component {
   render(){
     return (
       <div>
-        <Navbar />
+        <Sidebar />
         <Header />
-        <Banner url={this.props.url}/>
-        <div className="row">
-          <Content content={this.props.content}/>
-        </div>
+        <Content content={this.props.content}/>
 	      <Footer />
 	    </div>
 	  );
