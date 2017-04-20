@@ -2,11 +2,18 @@
  * Created by felipe on 16/04/17.
  */
 
+//React imports
 import React from "react";
 import { Link } from "react-router-dom";
 
+//External dependencies
+import "lodash";
+
+//Style import is necessary to sass-loader
 import "./Sidebar.scss";
 
+//Elements to hide on expansion of sidebar.
+const elementIds = ["main", "navbar", "footer"];
 
 export default class Sidebar extends React.Component {
 
@@ -16,8 +23,13 @@ export default class Sidebar extends React.Component {
 
   closeSideBar(){
     document.getElementById("sidebar").style.width = "0";
-    document.getElementById("content").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
+    _.each(elementIds, element => document.getElementById(element).style.marginLeft= "0");
+  }
+
+  static openSideBar(){
+    document.getElementById("sidebar").style.width = "250px";
+    _.each(elementIds, element => document.getElementById(element).style.marginLeft= "250px");
+
   }
 
   render(){

@@ -11,7 +11,7 @@ export default class Content extends React.Component {
 
   render(){
     return (
-      <main id="content" className="main">
+      <main id="main" className="main">
         {this.props.content}
       </main>
 		);

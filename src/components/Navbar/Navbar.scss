@@ -9,6 +9,7 @@ $navbar_bg: #333;
   position: fixed;
   top: 0;
   width: 100%;
+  transition: .51s;
 }
 
 ul.nav.navbar-nav li{
@@ -28,7 +29,8 @@ ul li a:hover, a:visited{
 
 .btnOpen{
   font-size: 30px;
-  cursor:pointer
+  cursor:pointer;
+  padding: 1%;
 }
 
 @media screen and (max-height: 450px) {
