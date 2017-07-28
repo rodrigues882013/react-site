@@ -11,7 +11,9 @@ import Banner from "../Banner";
 import Sidebar from "../Sidebar";
 
 
+
 export default class Layout extends React.Component {
+  
   constructor(){
     super();
   }
@@ -23,7 +25,7 @@ export default class Layout extends React.Component {
       <div>
         <Sidebar />
         <Header />
-        <Content content={this.props.content}/>
+        <Content/>
 	      <Footer />
 	    </div>
 	  );

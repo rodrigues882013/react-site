@@ -8,7 +8,7 @@ import About from "./views/About";
 
 
 //Styles
-import "./App.scss"
+import "./App.scss";
 
 
 const app = document.getElementById('app');

@@ -6,7 +6,7 @@ import "./Footer.scss";
 export default class Footer extends React.Component {
   render(){
     return (
-      <footer id="footer"> Footer Component </footer>
+      <footer id="footer"> 2017 - All rights reserved </footer>
   	);
   }
 }

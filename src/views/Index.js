@@ -11,20 +11,13 @@ export default class Index extends React.Component {
 
   constructor(){
     super();
-    this.state = {
-      title: "Index",
-      url: "http://images.huffingtonpost.com/2015-01-20-IdeasMakeorBreakYourBusiness.jpg",
-      content: "Content"
-    };
   }
 
 
   render(){
     return (
       <div>
-        <Layout title={this.state.title}
-                url={this.state.url}
-                content={this.state.content}/>
+        <Layout />
       </div>
     );
   }

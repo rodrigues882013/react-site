@@ -39,6 +39,6 @@ export default class Sidebar extends React.Component {
         <Link to="/" onClick={this.closeSideBar}>Home</Link>
         <Link to="about" onClick={this.closeSideBar}>About</Link>
       </div>
-    )
+    );
   }
 }

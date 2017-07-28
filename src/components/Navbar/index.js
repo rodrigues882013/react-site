@@ -15,6 +15,6 @@ export default class Navbar extends React.Component {
       <nav id="navbar" className="navbar">
         <span className="btnOpen" onClick={Sidebar.openSideBar}>&#9776; </span>
       </nav>
-    )
+    );
 	}
 }
