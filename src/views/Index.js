@@ -11,13 +11,16 @@ export default class Index extends React.Component {
 
   constructor(){
     super();
+    this.state = {
+      content: "Hello, welcome to my personal page."
+    };
   }
 
 
   render(){
     return (
       <div>
-        <Layout />
+        <Layout content={this.state.content}/>
       </div>
     );
   }

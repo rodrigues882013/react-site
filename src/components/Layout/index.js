@@ -18,14 +18,12 @@ export default class Layout extends React.Component {
     super();
   }
 
-
-
   render(){
     return (
       <div>
         <Sidebar />
         <Header />
-        <Content/>
+        <Content content={this.props.content}/>
 	      <Footer />
 	    </div>
 	  );

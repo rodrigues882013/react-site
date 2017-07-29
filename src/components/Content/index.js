@@ -1,5 +1,10 @@
 import React from "react";
+
+import _ from "lodash";
+import axios from "axios";
+
 import Avatar from "../Avatar";
+
 
 import "./Content.scss";
 
@@ -8,6 +13,19 @@ export default class Content extends React.Component {
 
   constructor(){
     super();
+    
+  }
+
+  componentDidMount(){
+    getContent();
+  }
+
+  getContent(){
+    axios
+      .get()
+      .then( res => {
+
+      }, err => console.error(err));
   }
 
   render(){
@@ -15,7 +33,7 @@ export default class Content extends React.Component {
       <main id="main" className="main">
         <Avatar/>
         <article>
-          Hello, welcome to my personal page.
+          {this.props.content}
         </article>
 
       </main>

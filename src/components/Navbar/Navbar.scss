@@ -12,22 +12,22 @@ $navbar_bg: #000000;
   transition: .51s;
 }
 
-ul.nav.navbar-nav li{
+ul.nav.navbar-nav li {
   display: inline;
   padding: 3%;
   text-decoration: none;
 }
 
-ul li a{
+ul li a {
   text-decoration: none;
   color: $white;
 }
 
-ul li a:hover, a:visited{
+ul li a:hover, a:visited {
   color: $white;
 }
 
-.btnOpen{
+.btnOpen {
   font-size: 30px;
   cursor:pointer;
   padding: 1%;

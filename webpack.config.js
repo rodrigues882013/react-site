@@ -43,14 +43,30 @@ const config = {
             {
               loader: "css-loader",
               options: {
-                minimize: true
+                minimize: true,
+                sourceMap: true
               }
             },
             {
-              loader: "sass-loader"
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
             }
           ]
         })
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+              prefix: 'img',
+            }
+          }
+        ]
       }
 
     ]

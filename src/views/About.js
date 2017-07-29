@@ -13,8 +13,6 @@ export default class About extends React.Component {
   constructor(){
     super();
     this.state = {
-      title: "About",
-      url: "#",
       content: "Content"
     };
   }
@@ -23,9 +21,7 @@ export default class About extends React.Component {
   render(){
     return (
       <div>
-        <Layout title={this.state.title}
-                url={this.state.url}
-                content={this.state.content}/>
+        <Layout content={this.state.content}/>
       </div>
     );
   }

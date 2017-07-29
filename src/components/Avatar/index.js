@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Avatar.scss";
+import img from './Images/eu.jpg';
 
 
 export default class Avatar extends React.Component {
@@ -11,7 +12,7 @@ export default class Avatar extends React.Component {
 
   render(){
     return (
-        <img src="https://lh4.googleusercontent.com/5KWwcNuxVjywPJJI4PDwrc3TlnXyvWTKl9UjNRa8B2Fgx4S4dWNg7hQSaJee-xwDADG6Iog1LhCgwdk=w1366-h629" />
+        <img className="avatar_image" src={img} />
     );
   }
 }
