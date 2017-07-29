@@ -13,18 +13,19 @@ export default class Content extends React.Component {
 
   constructor(){
     super();
+    this.content = "";
     
   }
 
   componentDidMount(){
-    getContent();
+    this.getContent(this.props.content);
   }
 
-  getContent(){
+  getContent(page){
     axios
-      .get()
+      .get('https://raw.githubusercontent.com/rodrigues882013/react-site/master/messages.json')
       .then( res => {
-
+        console.log(res.data[page]);
       }, err => console.error(err));
   }
 
@@ -33,7 +34,7 @@ export default class Content extends React.Component {
       <main id="main" className="main">
         <Avatar/>
         <article>
-          {this.props.content}
+          {this.content}
         </article>
 
       </main>

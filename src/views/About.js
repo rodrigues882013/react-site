@@ -13,7 +13,7 @@ export default class About extends React.Component {
   constructor(){
     super();
     this.state = {
-      content: "Content"
+      content: "about"
     };
   }
 

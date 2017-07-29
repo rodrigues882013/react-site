@@ -12,7 +12,7 @@ export default class Index extends React.Component {
   constructor(){
     super();
     this.state = {
-      content: "Hello, welcome to my personal page."
+      content: "home"
     };
   }
 
