@@ -36,8 +36,8 @@ export default class Sidebar extends React.Component {
     return (
       <div id="sidebar" className="sidenav">
         <a href="javascript:void(0)" className="closebtn" onClick={this.closeSideBar}>&times;</a>
-        <Link to="/" onClick={this.closeSideBar}>Home</Link>
-        <Link to="about" onClick={this.closeSideBar}>About</Link>
+        <Link className="item" to="/" onClick={this.closeSideBar}>Home</Link>
+        <Link className="item" to="about" onClick={this.closeSideBar}>About</Link>
       </div>
     );
   }

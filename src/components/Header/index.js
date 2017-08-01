@@ -10,11 +10,13 @@ export default class Header extends React.Component {
     super();
   }
 
+  
+
 
   render(){
     return (
       <header>
-        <Navbar />
+        <Navbar page={ this.props.page} />
       </header>
 	  );
   }

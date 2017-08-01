@@ -1,5 +1,7 @@
 import React from "react";
 import Sidebar from "../Sidebar";
+import { Link } from "react-router-dom";
+
 
 import "./Navbar.scss";
 
@@ -7,13 +9,32 @@ import "./Navbar.scss";
 export default class Navbar extends React.Component {
 
 	constructor(){
-		super();
-	}
+    super();
+    this.state = {
+      selected: ''
+    };
+  }
+
+  componentDidMount(){
+    console.log(this.props.page)
+    this.setActive(this.props.page);
+  }
+  
+  setActive(selected){
+    this.setState({selected: selected});
+  }
+
+  isActive(value){
+    return ((value===this.state.selected) ? 'active' : '');
+  }
 
 	render(){
     return(
       <nav id="navbar" className="navbar">
-        <span className="btnOpen" onClick={Sidebar.openSideBar}>&#9776; </span>
+        <ul className="topnav">
+          <li><Link to="/" className={this.isActive('home')} onClick={this.setActive.bind(this, 'home')}>Home</Link></li>
+          <li><Link to="about" className={this.isActive('about')} onClick={this.setActive.bind(this, 'about')}>About</Link></li>
+        </ul>
       </nav>
     );
 	}

@@ -21,8 +21,7 @@ export default class Layout extends React.Component {
   render(){
     return (
       <div>
-        <Sidebar />
-        <Header />
+        <Header page={this.props.content}/>
         <Content content={this.props.content}/>
 	      <Footer />
 	    </div>
